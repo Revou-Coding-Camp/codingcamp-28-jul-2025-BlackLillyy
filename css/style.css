@@ -1,0 +1,98 @@
+/* Font opsional */
+body {
+  font-family: 'Lexend', sans-serif;
+  background-color: #fffaf7;
+  color: #333;
+  line-height: 1.6;
+  padding-top: 80%;
+}
+
+/* Welcome banner */
+.bg-pink {
+  background-color: #ffe7e7 !important;
+}
+.btn-pink {
+  background-color: #ff8a9d;
+  color: white;
+  border: none;
+}
+.btn-pink:hover {
+  background-color: #ff6b84;
+}
+.btn-pink-outline {
+  background-color: transparent;
+  color: #ff8a9d;
+  border: 2px solid #ff8a9d; 
+}
+.btn-pink-outline:hover {
+  background-color: #ff8a9d;
+  color: white;
+}
+#checkOrderBtn {
+  margin-top: 1rem;
+}
+.banner-img {
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Button khusus DoughLab */
+.btn-danger {
+  background-color: #ff8a65;
+  border-color: #ff8a65;
+}
+
+.btn-danger:hover {
+  background-color: #ff7043;
+  border-color: #ff7043;
+}
+
+/* Badge outlet */
+.bg-danger-subtle {
+  background-color: #ffd6d6 !important;
+}
+
+/* Tambahan layout padding */
+section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.welcome {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  background-color: #ffe7e7;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Responsive banner image max height */
+.banner img {
+  max-height: 300px;
+  object-fit: cover;
+}
+
+/* Navbar */
+.navbar-brand span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d94f4f;
+}
+
+/* Link navbar hover */
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: #ff9a8b;
+  color: white;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .navbar-nav {
+    gap: 0.5rem;
+  }
+}
