@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="assets/logo donat.png" />
+  <title>DoughLab!</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body class="bg-light pt-5">
+
+<header>  
+  <nav class="navbar navbar-expand-lg bg-white shadow fixed-top px-4 py-3">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="assets/logo donat.png" alt="Logo DoughLab" height="50" class="me-2">
+        <span class="fw-bold text-danger">DOUGHLAB</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navContent">
+        <ul class="navbar-nav gap-3">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="our-profile.html">Our Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="donuts.html">Donuts</a></li>
+          <li class="nav-item"><a class="nav-link" href="order-now.html">Order</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  <section class="welcome text-center py-5 bg-pink">
+    <div class="container">
+      <h1 class="display-5 text-danger" id="welcome-message">Hi, Welcome to our page!</h1>
+      <p class="lead">Your favorite place for handcrafted donuts!</p>
+      <img src="assets/donat pink.png" class="img-fluid w-100 banner-img" alt="Donut Banner">
+    </div>
+  </section>
+
+  <div class="modal fade" id="nameModal" tabindex="-1" aria-labelledby="nameModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="nameModalLabel">Haii Doughies, kenalan dulu yuk!</h5>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="inputName" class="form-control rounded-pill" placeholder="Masukkan nama kamu di sini">
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nanti aja deh</button>
+          <button type="button" class="btn btn-pink-outline" id="submitName">Yuk Lanjut!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080">
+    <div id="nameToast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true"
+      data-bs-delay="1500" data-bs-autohide="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          Kalau mau lanjut isi nama dulu yaa bestie~
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <section class="info-panel py-5">
+    <div class="container">
+      <div class="row text-center gy-4">
+        <div class="col-md-4">
+          <div class="info-box p-4 h-100 rounded-4 border border-pink bg-pink shadow-sm">
+            <i class="bi bi-telephone-fill text-pink fs-2 mb-2 d-block"></i>
+            <h6 class="fw-bold mb-1">Contact</h6>
+            <p class="mb-0">0857-5555-6574<br>@doughlab.urfav</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="info-box p-4 h-100 rounded-4 border border-pink bg-pink shadow-sm">
+            <i class="bi bi-geo-alt-fill text-pink fs-2 mb-2 d-block"></i>
+            <h6 class="fw-bold mb-1">Where We Roll</h6>
+            <p class="mb-0">Jl. Cozy Crunch No. 7<br>Donutville</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="info-box p-4 h-100 rounded-4 border border-pink bg-pink shadow-sm">
+            <i class="bi bi-clock-fill text-pink fs-2 mb-2 d-block"></i>
+            <h6 class="fw-bold mb-1">Sweet Support</h6>
+            <p class="mb-0">Online 24/7<br>Offline Hours: 10:00 - 18:00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<button class="btn btn-pink position-fixed bottom-0 end-0 m-4 shadow" style="z-index: 9999; animation: bounce 1s infinite;" data-bs-toggle="modal" data-bs-target="#promoModal">
+  🎉 Promo
+</button>
+
+<div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-pink">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger" id="promoLabel">🎁 Promo Spesial</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+        <p class="fs-5 text-center">Buy 5 get 1 free – valid until Sunday!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer bg-white border-top shadow-sm py-3">
+  <div class="container text-center">
+    <p class="text-muted fst-italic mb-1">“Where Every Bite Feels Right.”</p>
+    <p class="text-muted small mb-0">&#169; 2025 Alhayu Navisa</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+  AOS.init({
+    duration: 800, 
+    once: true     
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="assets/logo donat.png" />
+  <title>Donuts | DoughLab!</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light pt-5">
+
+<header>  
+  <nav class="navbar navbar-expand-lg bg-white shadow fixed-top px-4 py-3">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="assets/logo donat.png" alt="Logo DoughLab" height="50" class="me-2">
+        <span class="fw-bold text-danger">DOUGHLAB</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navContent">
+        <ul class="navbar-nav gap-3">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="our-profile.html">Our Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="donuts.html">Donuts</a></li>
+          <li class="nav-item"><a class="nav-link" href="order-now.html">Order</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section class="text-center py-5">
+  <div class="container mt-4">
+    <h2 class="text-danger fw-bold mb-3">Choose your fav!</h2>
+    <p class="text-muted mb-4">Temukan varian donat favoritmu, dari yang klasik sampai eksperimental!</p>
+
+    <div class="donut-image-container mb-5">
+      <img src="assets/donat banyak.png" alt="Menu Donat DoughLab" class="img-fluid rounded-4 shadow donut-image" data-bs-toggle="modal" data-bs-target="#donutModal">
+    </div>
+
+    <div class="row g-3 justify-content-center">
+      <div class="col-6 col-sm-4 col-md-2">
+        <button class="btn btn-outline-pink w-100 rounded-pill text-truncate" data-bs-toggle="modal" data-bs-target="#flavorModal" data-flavor="Blurple Baby" data-desc="💜 Donat glaze ungu blueberry yang aesthetic abis. Rasanya segar, tampilannya cocok buat story-in!" data-aos="fade-up" data-aos-delay="100">Blurple Baby</button>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <button class="btn btn-outline-pink w-100 rounded-pill text-truncate" data-bs-toggle="modal" data-bs-target="#flavorModal" data-flavor="Berry Queen" data-desc="💗 Red velvet donat dengan glaze raspberry dan drizzle putih. Bonus topping berry yang fierce AF!">Berry Queen</button>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <button class="btn btn-outline-pink w-100 rounded-pill text-truncate" data-bs-toggle="modal" data-bs-target="#flavorModal" data-flavor="Choco Rainstorm" data-desc="🍫 Taburan meses cokelat brutal di atas glaze manis. Legit, chaotic, comforting.">Choco Rainstorm</button>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <button class="btn btn-outline-pink w-100 rounded-pill text-truncate" data-bs-toggle="modal" data-bs-target="#flavorModal" data-flavor="Cinnabaddie" data-desc="🤎 Cinnamon sugar klasik — tapi vibes-nya chill dan nostalgic. Kayak pelukan hangat.">Cinnabaddie</button>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <button class="btn btn-outline-pink w-100 rounded-pill text-truncate" data-bs-toggle="modal" data-bs-target="#flavorModal" data-flavor="Pistachio Garden" data-desc="💚 Donat dengan topping bunga kering & pistachio. Earthy, artsy, and totally soft-girl.">Pistachio Garden</button>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <button class="btn btn-outline-pink w-100 rounded-pill text-truncate" data-bs-toggle="modal" data-bs-target="#flavorModal" data-flavor="Sprinkle Spree" data-desc="🎉 Donat dengan glaze dan confetti sprinkle warna-warni. Mood booster in one bite!">Sprinkle Spree</button>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <button class="btn btn-outline-pink w-100 rounded-pill text-truncate" data-bs-toggle="modal" data-bs-target="#flavorModal" data-flavor="Snow Vibes" data-desc="🤍 Donat putih mulus dengan glaze vanilla. Simpel, clean, tapi classy af.">Snow Vibes</button>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <button class="btn btn-outline-pink w-100 rounded-pill text-truncate" data-bs-toggle="modal" data-bs-target="#flavorModal" data-flavor="Mocha Twist" data-desc="☕ Bentuk twisted, rasa kopi mocha yang bold. Buat kamu yang butuh drama dan caffeine.">Mocha Twist</button>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <button class="btn btn-outline-pink w-100 rounded-pill text-truncate" data-bs-toggle="modal" data-bs-target="#flavorModal" data-flavor="Island Chill" data-desc="🌴 Glaze lemon dengan taburan kelapa slice. Tropikal vibes, cocok buat chill di feed.">Island Chill</button>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <button class="btn btn-outline-pink w-100 rounded-pill text-truncate" data-bs-toggle="modal" data-bs-target="#flavorModal" data-flavor="Powderpuff Mystery" data-desc="Donat bulat berbedak gula halus. Dalamnya? Rahasia. (Spoiler: enak banget).">Powderpuff Mystery</button>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <button class="btn btn-outline-pink w-100 rounded-pill text-truncate" data-bs-toggle="modal" data-bs-target="#flavorModal" data-flavor="Trouble Choco" data-desc="🍫 Donat cokelat glaze dobel + sprinkle warna. Classic with extra chaos.">Trouble Choco</button>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <button class="btn btn-outline-pink w-100 rounded-pill text-truncate" data-bs-toggle="modal" data-bs-target="#flavorModal" data-flavor="Heartcrush Glaze" data-desc="💘 Pink heart glaze buat yang lagi baper - baper manis. Warning: bisa bikin gagal move on.">Heartcrush Glaze</button>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <button class="btn btn-outline-pink w-100 rounded-pill text-truncate" data-bs-toggle="modal" data-bs-target="#flavorModal" data-flavor="Sugar Rush" data-desc="🔴 Sprinkle overload with wild glaze. Satu gigit = otak loading 200 bpm.">Sugar Rush</button>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <button class="btn btn-outline-pink w-100 rounded-pill text-truncate" data-bs-toggle="modal" data-bs-target="#flavorModal" data-flavor="Minty Munch" data-desc="💚 Mint glaze yang calming + sprinkle colorful. Fresh af, kayak chat dari crush.">Minty Munch</button>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2">
+        <button class="btn btn-outline-pink w-100 rounded-pill text-truncate" data-bs-toggle="modal" data-bs-target="#flavorModal" data-flavor="Oreo Eclipse" data-desc="⚫ Full oreo crumble + cream glaze. Gelap, misterius, manis — kaya mantan yang masih nge-stalk.">Oreo Eclipse</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal fade" id="flavorModal" tabindex="-1" aria-labelledby="flavorModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header bg-pink text-danger">
+        <h5 class="modal-title fw-bold text-center w-100" id="flavorModalLabel">🍩 Nama Donat</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p class="mb-0" id="flavorDesc">Deskripsi donat muncul di sini...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="py-5 bg-pink">
+  <div class="container">
+    <h3 class="text-danger text-center fw-bold">Pilihan Paket Donat</h3>
+    <p class="text-muted text-center mb-5">Satu doang pasti gak puas kan~?</p>
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+          <img src="assets/pkt newbie.png" class="card-img-top rounded-top-4" alt="Paket Original">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold text-danger">Paket Newbie</h5>
+            <p class="text-muted mb-2">Pas banget buat kamu yang baru kenalan sama DoughLab. Ukurannya kecil tapi vibes-nya gede. Buat ngemil sendirian, atau traktir temen deket. Manisnya cukup, mood langsung naik!</p>
+            <span class="fw-semibold text-dark">Rp 25.000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+          <img src="assets/pkt legend.png" class="card-img-top rounded-top-4" alt="Paket Custom">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold text-danger">Paket Legend</h5>
+            <p class="text-muted mb-2">Paket paling pas buat kamu kaum mendang - mending dan punya rasa favorit sendiri. Campuran best seller dan topping favorit bikin box ini selalu jadi juara di hati para #DoughiesSquad.</p>
+            <span class="fw-semibold text-dark">Rp 35.000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+          <img src="assets/pkt mythic.png" class="card-img-top rounded-top-4" alt="Paket Premium">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold text-danger">Paket Mythic</h5>
+            <p class="text-muted mb-2">Untuk yang suka lebih dan gak takut manja-manjain diri. Dengan 9 donat dalam satu kotak, kamu bisa sharing ke temen… atau enggak😋 <br> Bigger Box, Bigger Bliss! </p>
+            <span class="fw-semibold text-dark">Rp 50.000</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer bg-white border-top shadow-sm py-3">
+  <div class="container text-center">
+    <p class="text-muted fst-italic mb-1">“Where Every Bite Feels Right.”</p>
+    <p class="text-muted small mb-0">&#169; 2025 Alhayu Navisa</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

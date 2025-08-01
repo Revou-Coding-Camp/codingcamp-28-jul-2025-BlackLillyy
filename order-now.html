@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="assets/logo donat.png" />
+  <title>Order | DoughLab!</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-light pt-5">
+
+  <header>  
+    <nav class="navbar navbar-expand-lg bg-white shadow fixed-top px-4 py-3">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="assets/logo donat.png" alt="Logo DoughLab" height="50" class="me-2">
+          <span class="fw-bold text-danger">DOUGHLAB</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navContent">
+          <ul class="navbar-nav gap-3">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="our-profile.html">Our Profile</a></li>
+            <li class="nav-item"><a class="nav-link" href="donuts.html">Donuts</a></li>
+            <li class="nav-item"><a class="nav-link active" href="order-now.html">Order</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="py-5 mt-3">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="p-4 bg-white shadow-sm rounded">
+            <h3 class="text-center text-danger fw-bold">Form Order</h3>
+            <p class="text-center text-muted">Yuk isi data diri kamu dan pilih donat favoritmu dari DoughLab.<br>Biar kami siapin dengan sepenuh hati!</p>
+
+            <form novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" class="form-control rounded-pill" placeholder="Nama Lengkap" id="nama" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control rounded-pill" placeholder="Email" id="email" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="tel" class="form-control rounded-pill" placeholder="Nomor HP" id="hp" required>
+                </div>
+                <div class="col-md-6">
+                <select class="form-select rounded-pill" id="paket" required>
+                  <option value="" disabled selected>Pilih Paket</option>
+                  <option value="newbie">Paket Newbie</option>
+                  <option value="legend">Paket Legend</option>
+                  <option value="mythic">Paket Mythic</option>
+                </select>
+                </div>
+                <div class="col-md-6">
+                  <input type="date" class="form-control rounded-pill" id="tanggal" required>
+                </div>
+                <div class="col-12">
+                  <textarea class="form-control" rows="3" placeholder="Alamat Lengkap" id="alamat" required></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-pink w-100 rounded-pill">Pesan Sekarang!</button>
+                </div>
+              </div>
+            </form>
+
+            <div id="orderSummary" class="mt-4 d-none">
+              <h5 class="text-danger fw-bold">📋 Ringkasan Pemesanan:</h5>
+              <ul class="list-group">
+                <li class="list-group-item"><strong>Nama:</strong> <span id="summaryNama"></span></li>
+                <li class="list-group-item"><strong>Nomor HP:</strong> <span id="summaryHP"></span></li>
+                <li class="list-group-item"><strong>Email:</strong> <span id="summaryEmail"></span></li>
+                <li class="list-group-item"><strong>Alamat:</strong> <span id="summaryAlamat"></span></li>
+                <li class="list-group-item"><strong>Paket Donat:</strong> <span id="summaryPaket"></span></li>
+                <li class="list-group-item"><strong>Jadwal Pemesanan:</strong> <span id="summaryTanggal"></span></li>
+                <li class="list-group-item"><strong>Created at:</strong> <span id="summaryWaktu"></span></li>
+              </ul>
+            </div>
+            <button class="btn btn-outline-danger mt-3 d-none" id="clearOrder">Hapus Ringkasan</button>
+
+            <div class="modal fade" id="hasilModal" tabindex="-1" aria-labelledby="hasilModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4 shadow">
+                  <div class="modal-header bg-pink text-pink rounded-top">
+                    <h5 class="modal-title" id="hasilModalLabel">🎉 Pendaftaran Berhasil!</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body text-center py-4">
+                    <p class="mb-2">Terima kasih, <span class="fw-bold text-danger" id="namaOutput">Nama</span>!</p>
+                    <p class="text-muted small">Kami akan menghubungi Anda sesuai jadwal pemesanan berikut:</p>
+                    <p class="fw-bold text-danger mb-0" id="jadwalOutput">-</p>
+                    <button type="button" class="btn btn-pink-outline rounded-pill mt-3" data-bs-dismiss="modal">Tutup</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1055">
+              <div id="toastError" class="toast align-items-center text-white bg-danger border-0" role="alert">
+                <div class="d-flex">
+                  <div class="toast-body" id="toastMsg">Pesan error di sini</div>
+                  <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer bg-white border-top shadow-sm py-3">
+    <div class="container text-center">
+      <p class="text-muted fst-italic mb-1">“Where Every Bite Feels Right.”</p>
+      <p class="text-muted small mb-0">&#169; 2025 Alhayu Navisa</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
