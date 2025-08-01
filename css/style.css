@@ -37,6 +37,26 @@ body {
   object-position: center;
 }
 
+/* Warna pink lembut DoughLab */
+.text-pink {
+  color: #ff7f9f;
+}
+
+.border-pink {
+  border-color: #ffc0cb !important;
+}
+
+/* Hover animasi lucu */
+.info-box {
+  transition: all 0.3s ease;
+}
+
+.info-box:hover {
+  background-color: #fff0f5;
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(255, 173, 186, 0.2);
+}
+
 /* Button khusus DoughLab */
 .btn-danger {
   background-color: #ff8a65;
@@ -65,6 +85,21 @@ section {
   text-align: center;
   margin-top: 30px;
 }
+.who-we-are {
+  background: linear-gradient(rgba(255, 192, 203, 0.4), rgba(255, 192, 203, 0.4)),
+              url('../assets/donat.png') center/cover no-repeat;
+  backdrop-filter: blur(2px);
+  margin-top: 30px;
+  margin-bottom: 95px;
+}
+.who-we-are h2 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.who-we-are p {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.1); /* Semi transparan untuk highlight teks */
+  border-radius: 1rem;
+}
 
 /* Responsive banner image max height */
 .banner img {
@@ -85,9 +120,11 @@ section {
 }
 
 /* Footer */
-footer {
-  background-color: #ff9a8b;
-  color: white;
+.footer-fixed {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
 }
 
 /* Responsive tweaks */

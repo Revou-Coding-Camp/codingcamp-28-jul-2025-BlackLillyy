@@ -1,30 +1,48 @@
-document.getElementById("orderForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+  const namaInput = document.getElementById("nama");
+  const tanggalInput = document.getElementById("tanggal");
+  const namaOutput = document.getElementById("namaOutput");
+  const jadwalOutput = document.getElementById("jadwalOutput");
+  const toastEl = document.getElementById("toastError");
+  const toastMsg = document.getElementById("toastMsg");
+  const hasilModalEl = document.getElementById("hasilModal");
 
-  const name = document.getElementById("name").value;
-  const date = document.getElementById("date").value;
-  const variant = document.getElementById("variant").value;
-  const quantity = document.getElementById("quantity").value;
-  const message = document.getElementById("message").value;
+  const hasilModal = new bootstrap.Modal(hasilModalEl);
+  const toast = new bootstrap.Toast(toastEl, { delay: 3000 });
 
-  // Ganti sapaan di banner
-  document.getElementById("welcome-message").textContent = `Hi, ${name}! Welcome to our page!`;
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  // Isi konten di modal
-  const output = `
-    <p><strong>Name:</strong> ${name}</p>
-    <p><strong>Date:</strong> ${date}</p>
-    <p><strong>Variant:</strong> ${variant}</p>
-    <p><strong>Quantity:</strong> ${quantity}</p>
-    <p><strong>Note:</strong> ${message || '-'}</p>
-  `;
-  document.getElementById("orderSummaryBody").innerHTML = output;
+    const nama = namaInput.value.trim();
+    const tanggalVal = tanggalInput.value;
+    const today = new Date();
+    const selected = new Date(tanggalVal);
+    today.setHours(0, 0, 0, 0);
 
-  // Tampilkan modal hasil order
-  const modal = new bootstrap.Modal(document.getElementById('orderSummaryModal'));
-  modal.show();
+    if (!nama) {
+      toastMsg.textContent = "Nama tidak boleh kosong.";
+      toast.show();
+      return;
+    }
 
-  // Reset form (opsional)
-  // e.target.reset();
+    if (!tanggalVal || selected < today) {
+      toastMsg.textContent = "Tanggal pemesanan tidak boleh sebelum hari ini.";
+      toast.show();
+      return;
+    }
+
+    const formatted = selected.toLocaleDateString("id-ID", {
+      weekday: "long", 
+      year: "numeric", 
+      month: "long", 
+      day: "numeric"
+    });
+
+    namaOutput.textContent = nama;
+    jadwalOutput.textContent = formatted;
+
+    hasilModal.show();
+    form.reset();
+  });
 });
-

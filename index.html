@@ -28,7 +28,8 @@
         <ul class="navbar-nav gap-3">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="our-profile.html">Our Profile</a></li>
-          <li class="nav-item"><a class="nav-link" href="order-now.html">Order Now</a></li>
+          <li class="nav-item"><a class="nav-link" href="donuts.html">Our Donuts</a></li>
+          <li class="nav-item"><a class="nav-link" href="order-now.html">Order</a></li>
           <li class="nav-item"><a class="nav-link" href="outlet.html">Outlet</a></li>
         </ul>
       </div>
@@ -45,17 +46,65 @@
     </div>
   </section>
 
-  <!-- Outlet -->
-  <section id="outlet" class="py-5">
-    <div class="container text-center">
-      <h2 class="mb-3">Our Outlets</h2>
-      <div class="d-flex flex-wrap justify-content-center gap-3">
-        <div class="badge rounded-pill bg-danger-subtle text-dark p-3 fs-6">Jakarta</div>
-        <div class="badge rounded-pill bg-danger-subtle text-dark p-3 fs-6">Bandung</div>
-        <div class="badge rounded-pill bg-danger-subtle text-dark p-3 fs-6">Surabaya</div>
+    <!-- Modal Nama -->
+  <div class="modal fade" id="nameModal" tabindex="-1" aria-labelledby="nameModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="nameModalLabel">Haii Doughies, kenalan dulu yuk!</h5>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="inputName" class="form-control rounded-pill" placeholder="Masukkan nama kamu di sini">
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nanti aja deh</button>
+          <button type="button" class="btn btn-pink-outline" id="submitName">Yuk Lanjut!</button>
+        </div>
       </div>
     </div>
-  </section>  
+  </div>
+
+  <!-- Toast Error -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080">
+    <div id="nameToast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true"
+      data-bs-delay="1500" data-bs-autohide="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          🚫 Nama tidak boleh kosong!
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel info -->
+  <section class="info-panel py-5">
+    <div class="container">
+      <div class="row text-center gy-4">
+        <div class="col-md-4">
+          <div class="info-box p-4 h-100 rounded-4 border border-pink bg-pink shadow-sm">
+            <i class="bi bi-telephone-fill text-pink fs-2 mb-2 d-block"></i>
+            <h6 class="fw-bold mb-1">Contact</h6>
+            <p class="mb-0">0857-5555-6574<br>@doughlab.urfav</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="info-box p-4 h-100 rounded-4 border border-pink bg-pink shadow-sm">
+            <i class="bi bi-geo-alt-fill text-pink fs-2 mb-2 d-block"></i>
+            <h6 class="fw-bold mb-1">Address</h6>
+            <p class="mb-0">Jl. Manis Legit No.12<br>Bandung</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="info-box p-4 h-100 rounded-4 border border-pink bg-pink shadow-sm">
+            <i class="bi bi-clock-fill text-pink fs-2 mb-2 d-block"></i>
+            <h6 class="fw-bold mb-1">Support</h6>
+            <p class="mb-0">24/7 Online<br>10:00 - 18:00 Offline</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Button Promo -->
 <button class="btn btn-pink position-fixed bottom-0 end-0 m-4 shadow" style="z-index: 9999;" data-bs-toggle="modal" data-bs-target="#promoModal">
@@ -77,70 +126,13 @@
   </div>
 </div>
 
-  <!-- Order Section -->
-  <section id="order" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Order Now</h2>
-      <form id="orderForm" class="mx-auto" style="max-width: 450px;">
-        <div class="mb-3">
-          <label for="name" class="form-label">Your Name:</label>
-          <input type="text" class="form-control" id="name" required />
-        </div>
-        <div class="mb-3">
-          <label for="date" class="form-label">Order Date:</label>
-          <input type="date" class="form-control" id="date" required />
-        </div>
-        <div class="mb-3">
-          <label for="variant" class="form-label">Donut Variant:</label>
-          <select class="form-select" id="variant" required>
-            <option value="">-- Choose Variant --</option>
-            <option value="Original">Original</option>
-            <option value="Filled">Filled</option>
-            <option value="Glazed">Glazed</option>
-            <option value="Custom Box">Custom Box</option>
-          </select>
-        </div>
-        <div class="mb-3">
-          <label for="quantity" class="form-label">Quantity:</label>
-          <input type="number" class="form-control" id="quantity" min="1" required />
-        </div>
-        <div class="mb-3">
-          <label for="message" class="form-label">Additional Message:</label>
-          <textarea class="form-control" id="message" rows="3"></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-pink w-100">Submit Order</button>
-      </form>
-    </div>
-  </section>
-
-  <div class="text-center mb-5">
-    <button type="button" class="btn btn-pink-outline" data-bs-toggle="modal" data-bs-target="#orderSummaryModal">
-      🧾 Cek Order Kamu di Sini!
-    </button>
-  </div>
-
-  <div class="modal fade" id="orderSummaryModal" tabindex="-1" aria-labelledby="orderSummaryLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content bg-pink">
-        <div class="modal-header">
-          <h5 class="modal-title" id="orderSummaryLabel">🍩 Order Summary 🍩</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" id="orderSummaryBody">
-          <!-- Output will be inserted here -->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-pink-outline" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Footer -->
-  <footer class="text-center bg-danger text-white py-3">
-    <p class="mb-0">Created by Alhayu Navisa</p>
-  </footer>
+<footer class="footer-fixed bg-white border-top shadow-sm py-3">
+  <div class="container text-center">
+    <p class="text-muted fst-italic mb-1">“Where Every Bite Feels Right.”</p>
+    <p class="text-muted small mb-0">&#169; 2025 Alhayu Navisa</p>
+  </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
