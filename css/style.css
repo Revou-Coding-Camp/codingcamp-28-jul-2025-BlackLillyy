@@ -1,13 +1,14 @@
-/* Font opsional */
 body {
   font-family: 'Lexend', sans-serif;
   background-color: #fffaf7;
   color: #333;
   line-height: 1.6;
-  padding-top: 80%;
+  padding-top: 5rem;
 }
-
-/* Welcome banner */
+.modal-body p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
 .bg-pink {
   background-color: #ffe7e7 !important;
 }
@@ -15,6 +16,10 @@ body {
   background-color: #ff8a9d;
   color: white;
   border: none;
+}
+.btn-pink:active {
+  transform: scale(0.98);
+  transition: transform 0.1s;
 }
 .btn-pink:hover {
   background-color: #ff6b84;
@@ -28,52 +33,49 @@ body {
   background-color: #ff8a9d;
   color: white;
 }
-#checkOrderBtn {
-  margin-top: 1rem;
+.btn-outline-pink {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.75rem;
+  border: 2px solid #ff8a9d;
+  color: #ff8a9d;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+.btn-outline-pink:hover {
+  background-color: #ff8a9d;
+  color: white;
+  transform: scale(1.05);
 }
 .banner-img {
   height: 300px;
   object-fit: cover;
   object-position: center;
 }
-
-/* Warna pink lembut DoughLab */
 .text-pink {
   color: #ff7f9f;
 }
-
 .border-pink {
   border-color: #ffc0cb !important;
 }
-
-/* Hover animasi lucu */
 .info-box {
   transition: all 0.3s ease;
 }
-
 .info-box:hover {
   background-color: #fff0f5;
   transform: translateY(-5px) scale(1.02);
   box-shadow: 0 8px 16px rgba(255, 173, 186, 0.2);
 }
-
-/* Button khusus DoughLab */
 .btn-danger {
   background-color: #ff8a65;
   border-color: #ff8a65;
 }
-
 .btn-danger:hover {
   background-color: #ff7043;
   border-color: #ff7043;
 }
-
-/* Badge outlet */
 .bg-danger-subtle {
   background-color: #ffd6d6 !important;
 }
-
-/* Tambahan layout padding */
 section {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -89,7 +91,7 @@ section {
   background: linear-gradient(rgba(255, 192, 203, 0.4), rgba(255, 192, 203, 0.4)),
               url('../assets/donat.png') center/cover no-repeat;
   backdrop-filter: blur(2px);
-  margin-top: 30px;
+  margin-top: 90px;
   margin-bottom: 95px;
 }
 .who-we-are h2 {
@@ -100,36 +102,79 @@ section {
   background-color: rgba(255, 255, 255, 0.1); /* Semi transparan untuk highlight teks */
   border-radius: 1rem;
 }
-
-/* Responsive banner image max height */
-.banner img {
-  max-height: 300px;
-  object-fit: cover;
-}
-
-/* Navbar */
 .navbar-brand span {
   font-size: 1.5rem;
   font-weight: bold;
   color: #d94f4f;
 }
-
-/* Link navbar hover */
 .nav-link:hover {
   text-decoration: underline;
 }
-
-/* Footer */
-.footer-fixed {
+.donut-image {
+  max-height: 350px;
+  object-fit: cover;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.donut-image:hover {
+  transform:scale(1.02);
+  box-shadow: 0 10px 20px rgba(255, 173, 186, 0.3);
+}
+.card-title {
+  font-size: 1.2rem;
+}
+.card-body {
+  padding: 1rem;
+}
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+.card:hover {
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(255, 173, 186, 0.2);
+}
+.footer {
   position: relative;
   bottom: 0;
   width: 100%;
   z-index: 999;
 }
+.toast.show {
+  animation: fadein 0.3s ease;
+}
 
-/* Responsive tweaks */
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
 @media (max-width: 768px) {
   .navbar-nav {
     gap: 0.5rem;
+  }
+}
+@media (max-width: 576px) {
+  body {
+    padding-top: 4rem;
+  }
+  .modal-body p {
+    font-size: 0.95rem;
+  }
+  .donut-image {
+    max-height: 250px;
+  }
+  .btn-outline-pink {
+    font-size: 0.85rem;
+  }
+  .card-title {
+    font-size: 1rem;
   }
 }
